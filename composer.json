@@ -1,0 +1,9 @@
+{
+    "require": {
+        "monolog/monolog": "^3.2"
+    },
+
+    "autoload": {
+        "psr-4": {"App\\": "src/App"}
+    }
+}
