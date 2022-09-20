@@ -3,12 +3,23 @@
 include "../config/settings.php";
 require '../config/dependencies.php';
 
+// $result = $DeviceMapper->create;
 
-    if ($result == TRUE) {
-      echo "New record created successfully.";
-    }else{
-    echo "Error";
-    } 
+//     if ($result == TRUE) {
+//       echo "New record created successfully.";
+//     }else{
+//     echo "Error";
+//     } 
+
+$pdo = require_once '../config/router.php';
+$statement = $pdo->prepare($sql);
+
+$statement->execute([
+	':assetTag' => $assetTag
+]);
+
+$assetTag = $pdo->lastInsertId();
+echo 'The asset Tag ' . $assetTag . ' was inserted';
 
 ?>
 

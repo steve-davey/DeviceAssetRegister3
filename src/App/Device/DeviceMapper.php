@@ -25,29 +25,21 @@ class DeviceMapper
     return $result->fetchAll();
   }
 
-  public function create(array $sql)
+  public function create(array $data)
   {
-    $sql = "INSERT INTO `devices`(`assetTag`, `assignedTo`, `dateBought`, `dateDecommissioned`, `deviceType`, `operatingSystem`) 
+    $sql = "INSERT INTO devices(assetTag, assignedTo, dateBought, dateDecommissioned, deviceType, operatingSystem) 
             VALUES (:assetTag, :assignedTo, :dateBought', :dateDecommissioned', :deviceType, :operatingSystem)";
     $stmt = $this->pdo->prepare($sql);
     return $stmt->execute(
       [
-        'assetTag' => $sql[`assetTag`],
-        'assignedTo' => $sql[`assignedTo`],
-        'dateBought' => $sql[`dateBought`],
-        'dateDecommissioned' => $sql[`dateDecommissioned`],
-        'deviceType' => $sql[`deviceType`],
-        'operatingSystem' => $sql[`operatingSystem`],
+        'assetTag' => $data['assetTag'],
+        'assignedTo' => $data['assignedTo'],
+        'dateBought' => $data['dateBought'],
+        'dateDecommissioned' => $data['dateDecommissioned'],
+        'deviceType' => $data['deviceType'],
+        'operatingSystem' => $data['operatingSystem'],
       ]
     );
-  //   $data = [
-  //     'assetTag' => $assetTag,
-  //     'surname' => $surname,
-  //     'sex' => $sex,
-  // ];
-  // $sql = "INSERT INTO users (assetTag, surname, sex) VALUES (:assetTag, :surname, :sex)";
-  // $stmt= $pdo->prepare($sql);
-  // $stmt->execute($data);
   }
 
   public function update(int $assetTag, array $sql)

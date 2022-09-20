@@ -28,10 +28,12 @@ $result = $DeviceMapper->getAll();
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>assetTag</th>
-                                    <th>assignedTo</th>
-                                    <th>dateBought</th>
-                                    <th>dateDecommissioned</th>
+                                    <th>asset Tag</th>
+                                    <th>assigned To</th>
+                                    <th>date Bought</th>
+                                    <th>date Decommissioned</th>
+                                    <th>device Type</th>
+                                    <th>operating System</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -42,6 +44,8 @@ $result = $DeviceMapper->getAll();
                                     <td><?= $row['assignedTo'] ?></td>
                                     <td><?= $row['dateBought'] ?></td>
                                     <td><?= $row['dateDecommissioned'] ?></td>
+                                    <td><?= $row['deviceType'] ?></td>
+                                    <td><?= $row['operatingSystem'] ?></td>
                                     <td>
                                         <a href="read.php?id=<?= $row['assetTag'] ?>"
                                             class="mr-3"

@@ -1,7 +1,7 @@
 <?php
 
 use App\DeviceMapper;
-require '../src/App/DeviceMapper.php';
+require '../src/App/Device/DeviceMapper.php';
 
 $config = require 'settings.php';
 
